@@ -1,0 +1,18 @@
+{
+  "trigger": true,
+  "modules": [
+    "captcha-verify"
+  ],
+  "parentResource": "begalleryamplify419b7b05",
+  "functionName": "begalleryamplify419b7b05VerifyAuthChallengeResponse",
+  "resourceName": "begalleryamplify419b7b05VerifyAuthChallengeResponse",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/usr/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/VerifyAuthChallengeResponse",
+  "triggerTemplate": "VerifyAuthChallengeResponse.json.ejs",
+  "triggerEventPath": "VerifyAuthChallengeResponse.event.json",
+  "roleName": "begalleryamplify419b7b05VerifyAuthChallengeResponse",
+  "skipEdit": true,
+  "RECAPTCHASECRET": "6LcyTmcaAAAAAJWu7I3D8varkN96mlbWA0j5Rb2I",
+  "enableCors": false
+}
