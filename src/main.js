@@ -8,6 +8,8 @@ import {
   defineCustomElements,
 } from '@aws-amplify/ui-components/loader';
 
+require("./assets/main.css");
+
 Amplify.configure(aws_exports);
 applyPolyfills().then(() => {
   defineCustomElements(window);
