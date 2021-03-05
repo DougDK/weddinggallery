@@ -1,56 +1,43 @@
 {
   "function": {
-    "greetingfunction": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "begalleryamplify419b7b05DefineAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "begalleryamplify419b7b05CreateAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "begalleryamplify419b7b05VerifyAuthChallengeResponse": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "begalleryamplify419b7b05CustomMessage": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "picturesupdate": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
+    "AdminQueriescafdbc86": {
       "service": "Lambda",
-      "dependsOn": []
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "begalleryamplify52801c3f",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ]
     }
   },
   "api": {
-    "pythonapi": {
+    "AdminQueries": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "greetingfunction",
+          "category": "auth",
+          "resourceName": "begalleryamplify52801c3f",
           "attributes": [
-            "Name",
-            "Arn"
+            "UserPoolId"
           ]
         },
         {
           "category": "function",
-          "resourceName": "picturesupdate",
+          "resourceName": "AdminQueriescafdbc86",
           "attributes": [
-            "Name",
-            "Arn"
+            "Arn",
+            "Name"
           ]
         }
       ]
@@ -64,54 +51,49 @@
     }
   },
   "auth": {
-    "begalleryamplify419b7b05": {
+    "begalleryamplify52801c3f": {
       "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    },
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "begalleryamplify419b7b05DefineAuthChallenge",
-          "triggerProvider": "Cognito",
+          "category": "auth",
+          "resourceName": "begalleryamplify52801c3f",
           "attributes": [
-            "Arn",
-            "Name"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "begalleryamplify419b7b05CreateAuthChallenge",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "begalleryamplify419b7b05VerifyAuthChallengeResponse",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "begalleryamplify419b7b05CustomMessage",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
           ]
         }
-      ],
-      "customAuth": true
+      ]
     }
   },
   "storage": {
     "bepicturesgallery": {
       "service": "S3",
-      "providerPlugin": "awscloudformation"
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "begalleryamplify52801c3f",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "userPoolGroups",
+          "attributes": [
+            "adminGroupRole"
+          ]
+        }
+      ]
     }
   }
 }

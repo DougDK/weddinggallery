@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import Amplify from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
+
 import aws_exports from './aws-exports';
 import {
   applyPolyfills,
@@ -14,5 +15,7 @@ Amplify.configure(aws_exports);
 applyPolyfills().then(() => {
   defineCustomElements(window);
 });
+
+Auth.configure(aws_exports);
 
 createApp(App).mount('#app')

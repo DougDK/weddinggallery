@@ -13,23 +13,6 @@
     },
     "categories": {
       "function": {
-        "greetingfunction": {
-          "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
-          "s3Key": "amplify-builds/greetingfunction-736764543645642b6566-build.zip"
-        },
-        "begalleryamplify419b7b05DefineAuthChallenge": {
-          "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
-          "s3Key": "amplify-builds/begalleryamplify419b7b05DefineAuthChallenge-4531452b704849553533-build.zip"
-        },
-        "begalleryamplify419b7b05CreateAuthChallenge": {
-          "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
-          "s3Key": "amplify-builds/begalleryamplify419b7b05CreateAuthChallenge-7277355977427a4c5844-build.zip"
-        },
-        "begalleryamplify419b7b05VerifyAuthChallengeResponse": {
-          "RECAPTCHASECRET": "6LcyTmcaAAAAAJWu7I3D8varkN96mlbWA0j5Rb2I",
-          "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
-          "s3Key": "amplify-builds/begalleryamplify419b7b05VerifyAuthChallengeResponse-75516672626e2b4e506a-build.zip"
-        },
         "begalleryamplify419b7b05CustomMessage": {
           "REDIRECTURL": "dev.d3pg0y1aa3erd4.amplifyapp.com",
           "EMAILSUBJECT": "Marriage Picture Gallery Verification Email",
@@ -37,9 +20,9 @@
           "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
           "s3Key": "amplify-builds/begalleryamplify419b7b05CustomMessage-7239472b61394578626a-build.zip"
         },
-        "picturesupdate": {
+        "AdminQueriescafdbc86": {
           "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
-          "s3Key": "amplify-builds/picturesupdate-4166587453556a6e4e45-build.zip"
+          "s3Key": "amplify-builds/AdminQueriescafdbc86-4a58784a633555647949-build.zip"
         }
       },
       "hosting": {
@@ -49,7 +32,7 @@
         }
       },
       "auth": {
-        "begalleryamplify419b7b05": {}
+        "begalleryamplify52801c3f": {}
       }
     }
   }
