@@ -1,0 +1,72 @@
+{
+    "paths": [
+        {
+            "name": "/photos",
+            "lambdaFunction": "photoslambda",
+            "privacy": {
+                "userPoolGroups": {
+                    "admin": [
+                        "/POST",
+                        "/GET",
+                        "/PUT",
+                        "/PATCH",
+                        "/DELETE"
+                    ],
+                    "editors": [
+                        "/POST",
+                        "/GET",
+                        "/PUT",
+                        "/PATCH",
+                        "/DELETE"
+                    ]
+                }
+            },
+            "policyResourceName": "/photos"
+        }
+    ],
+    "resourceName": "pythonapi",
+    "apiName": "pythonapi",
+    "authResourceName": "begalleryamplify52801c3f",
+    "functionArns": [
+        {
+            "lambdaFunction": "photoslambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-begalleryamplify-dev-181523-authRole",
+        "unAuthRoleName": "amplify-begalleryamplify-dev-181523-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "photoslambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "auth",
+            "resourceName": "begalleryamplify52801c3f",
+            "attributes": [
+                "UserPoolId"
+            ]
+        },
+        {
+            "category": "auth",
+            "resourceName": "userPoolGroups",
+            "attributes": [
+                "adminGroupRole"
+            ]
+        },
+        {
+            "category": "auth",
+            "resourceName": "userPoolGroups",
+            "attributes": [
+                "editorsGroupRole"
+            ]
+        }
+    ]
+}

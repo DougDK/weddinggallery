@@ -23,10 +23,14 @@
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
+        "family_name",
+        "name",
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "email",
+        "family_name",
+        "name"
     ],
     "userpoolClientLambdaRole": "begall52801c3f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,

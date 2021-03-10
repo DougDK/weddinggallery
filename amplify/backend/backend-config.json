@@ -1,30 +1,34 @@
 {
   "function": {
-    "begalleryamplify419b7b05CustomMessage": {
+    "photoslambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "AdminQueriescafdbc86": {
       "service": "Lambda",
-      "providerPlugin": "awscloudformation",
-      "build": true,
       "dependsOn": [
         {
-          "category": "auth",
-          "resourceName": "begalleryamplify52801c3f",
+          "category": "storage",
+          "resourceName": "gallerydynamodb",
           "attributes": [
-            "UserPoolId"
+            "Name",
+            "Arn"
           ]
         }
       ]
     }
   },
   "api": {
-    "AdminQueries": {
+    "pythonapi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "photoslambda",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
         {
           "category": "auth",
           "resourceName": "begalleryamplify52801c3f",
@@ -33,11 +37,17 @@
           ]
         },
         {
-          "category": "function",
-          "resourceName": "AdminQueriescafdbc86",
+          "category": "auth",
+          "resourceName": "userPoolGroups",
           "attributes": [
-            "Arn",
-            "Name"
+            "adminGroupRole"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "userPoolGroups",
+          "attributes": [
+            "editorsGroupRole"
           ]
         }
       ]
@@ -94,6 +104,10 @@
           ]
         }
       ]
+    },
+    "gallerydynamodb": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

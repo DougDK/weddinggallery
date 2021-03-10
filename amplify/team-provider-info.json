@@ -12,19 +12,6 @@
       "AmplifyAppId": "d3pg0y1aa3erd4"
     },
     "categories": {
-      "function": {
-        "begalleryamplify419b7b05CustomMessage": {
-          "REDIRECTURL": "dev.d3pg0y1aa3erd4.amplifyapp.com",
-          "EMAILSUBJECT": "Marriage Picture Gallery Verification Email",
-          "EMAILMESSAGE": "Click this link to confirm your email address and complete setup for your account",
-          "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
-          "s3Key": "amplify-builds/begalleryamplify419b7b05CustomMessage-7239472b61394578626a-build.zip"
-        },
-        "AdminQueriescafdbc86": {
-          "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
-          "s3Key": "amplify-builds/AdminQueriescafdbc86-4a58784a633555647949-build.zip"
-        }
-      },
       "hosting": {
         "amplifyhosting": {
           "appId": "d3pg0y1aa3erd4",
@@ -33,6 +20,12 @@
       },
       "auth": {
         "begalleryamplify52801c3f": {}
+      },
+      "function": {
+        "photoslambda": {
+          "deploymentBucketName": "amplify-begalleryamplify-dev-181523-deployment",
+          "s3Key": "amplify-builds/photoslambda-4d42796a4e44434c3958-build.zip"
+        }
       }
     }
   }

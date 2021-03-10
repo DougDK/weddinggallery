@@ -95,15 +95,15 @@
         },
      
     
-        "editorsGroup": {
+        "editGroup": {
           "Type" : "AWS::Cognito::UserPoolGroup",
           "Properties" : {
-              "GroupName" : "editors",
+              "GroupName" : "edit",
               "Precedence" : 2,
               
               "RoleArn" : {
                 "Fn::GetAtt": [
-                    "editorsGroupRole",
+                    "editGroupRole",
                     "Arn"
                 ]
               },
@@ -114,7 +114,7 @@
             }
         },
         
-        "editorsGroupRole": {
+        "editGroupRole": {
             "Type": "AWS::IAM::Role",
             "Properties": {
                 "RoleName":{
@@ -124,7 +124,7 @@
                           {
                             "Ref": "authbegalleryamplify52801c3fUserPoolId"
                           },
-                          "-editorsGroupRole"
+                          "-editGroupRole"
                         ]
                     ]
                 },
@@ -360,10 +360,10 @@
         },
         
       
-        "editorsGroupRole": {
+        "editGroupRole": {
             "Value": {
                 "Fn::GetAtt": [
-                    "editorsGroupRole",
+                    "editGroupRole",
                     "Arn"
                 ]
             }

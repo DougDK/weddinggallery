@@ -28,7 +28,7 @@
     </div>
     <div v-if="imgToUpload" class="column is-2">
       <p class="control">
-        <button class="button is-link">
+        <button class="button is-link" @click="send">
           Send
         </button>
       </p>
@@ -37,7 +37,8 @@
 </template>
 
 <script>
-import { Storage } from 'aws-amplify';
+//import { API, Storage } from 'aws-amplify';
+import { API } from 'aws-amplify';
 
 export default {
   name: 'CreatePost',
@@ -54,8 +55,16 @@ export default {
       this.imgToUploadURL = URL.createObjectURL(this.imgToUpload);   
     },
     async send(){
-      //const result = await API.post('pythonapi', '/pictures/update');
-      Storage.put(this.imgToUpload.name, this.imgToUpload);
+      API.get('pythonapi', '/photos');
+      /*var myInit = {
+        body: {
+          'name': 'Douglas Rossi',
+          'description': 'Nice Pic!',
+          'image': 'test.png'
+        }
+      }*/
+      //API.post('pythonapi', '/photos', myInit);
+      //Storage.put(this.imgToUpload.name, this.imgToUpload);
     },
     cancel() {
       this.imgToUpload = undefined;

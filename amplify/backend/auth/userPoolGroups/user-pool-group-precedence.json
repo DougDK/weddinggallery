@@ -4,7 +4,7 @@
         "precedence": 1
     },
     {
-        "groupName": "editors",
+        "groupName": "edit",
         "precedence": 2
     }
 ]
